@@ -88,19 +88,13 @@ public class CourseDetailServiceImpl implements CourseDetailService{
 	}
 
 	@Override
-	public int test() throws CourseException {try {
-		{
-			// TODO Auto-generated method stub
-			
-			throw new CourseException("1001", "test exception", "test exception", "FAILED");
-			
+	public int test(){
+		try {
+			int i = 10/0;
+		}catch (Exception e) {
+			throw new NullPointerException();
 		}
-	} catch (CourseException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+	//	throw new CourseException("1001", "test", "test", "Ok");
+		return 0;
 	}
-	
-	return 0;
-	}
-	
 }

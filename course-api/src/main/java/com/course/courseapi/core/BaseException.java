@@ -1,18 +1,30 @@
 package com.course.courseapi.core;
 
-public class BaseException extends Exception{
+public class BaseException extends RuntimeException{
 	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	private String errorCode;
-	private String errorMessage;
-	private String errorDesc;
-	private String successStatus;
+	private static final long serialVersionUID = 31L;
 	
 	
+	protected String errorCode;
+	protected String errorMessage;
+	protected String errorDesc;
+	protected String successStatus;
 	
+	public BaseException(String errorCode, String errorMessage,Throwable cause)
+	{
+		super(cause);
+		this.errorCode = errorCode;
+		this.errorMessage = errorMessage;
+		
+	}	
+	
+	public BaseException(Throwable cause)
+	{
+		super(cause);
+	}	
 	public BaseException(String errorCode, String errorMessage, String errorDesc, String successStatus) {
 		this.errorCode = errorCode;
 		this.errorMessage = errorMessage;

@@ -24,8 +24,8 @@ public class CourseController {
 	private CourseDetailService courseDetailService;
 	
 	@GetMapping("/test")
-	public JsonResponse test() throws CourseException {
-		return JsonResponse.setJsonResponse("", "", "", courseDetailService.test(), "");
+	public JsonResponse test(){
+		return JsonResponse.setJsonResponse("", "", "", courseDetailService.test(), "ok");
 	}
 	
 	@RequestMapping("/course")

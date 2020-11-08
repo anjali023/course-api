@@ -1,12 +1,20 @@
 package com.course.courseapi.core;
 
-public class JsonResponse {
+import java.io.Serializable;
+
+public class JsonResponse implements Serializable{
+
 
 	private String errorCode;
 	private String errorMessage;
 	private String errorDesc;
 	private Object data;
 	private String successStatus;
+	
+	public JsonResponse(Object data) {
+		this.data = data;
+		
+	}
 	
 	public JsonResponse() {
 		
@@ -63,6 +71,13 @@ public class JsonResponse {
 	public static JsonResponse setJsonResponse(String errorCode, String errorMessage, String errorDesc, Object data,
 			String successStatus) {
 		JsonResponse jsonResponse = new JsonResponse(errorCode, errorMessage, errorDesc, data, successStatus);
+		return jsonResponse;
+
+	}
+	
+	public static JsonResponse setJsonResponse(Object data
+			) {
+		JsonResponse jsonResponse = new JsonResponse( data);
 		return jsonResponse;
 
 	}
