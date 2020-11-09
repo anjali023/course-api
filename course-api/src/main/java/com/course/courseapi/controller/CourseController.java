@@ -34,8 +34,9 @@ public class CourseController {
 	}
 	
 	@PostMapping("/course/addCourse")
-	public void addCourse(@RequestBody Course course) {
-		courseDetailService.addCourse(course);
+	public JsonResponse addCourse(@RequestBody Course course) {
+		
+		return JsonResponse.setJsonResponse("", "", "", courseDetailService.addCourse(course), "True");
 	}
 	
 	@GetMapping("/course/get-course-by-id/{id}")

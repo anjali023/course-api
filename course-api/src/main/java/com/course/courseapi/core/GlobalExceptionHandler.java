@@ -14,6 +14,7 @@ public class GlobalExceptionHandler {
 		response.setErrorCode(e.errorCode);
 		response.setErrorDesc(e.errorDesc);
 		response.setErrorMessage(e.errorMessage);
+		response.setSuccessStatus(e.successStatus);
 		return response;
 		
 	}

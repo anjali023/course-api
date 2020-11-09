@@ -9,7 +9,7 @@ import com.course.courseapi.exception.CourseException;
 public interface CourseDetailService {
 	
 	public int test();
-	public void addCourse(Course c);
+	public Course addCourse(Course c);
 	public List<Course> getAllCources();
 	public List<Course> getCourseById(int id);
 	public Course updateCourse(int courseId, String courseName);
